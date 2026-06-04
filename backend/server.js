@@ -10,6 +10,7 @@ app.use(express.json());
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
@@ -84,6 +85,8 @@ app.delete("/books/:id", (req, res) => {
   );
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on ${process.env.PORT}`);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
