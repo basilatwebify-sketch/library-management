@@ -12,8 +12,8 @@ export default function Home() {
     isbn: "",
   });
 
-  const API = "http://localhost:5000";
-
+  const API = "https://library-management-yjgc.onrender.com";
+  
   const fetchBooks = async () => {
     try {
       const res = await axios.get(`${API}/books`);
